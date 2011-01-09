@@ -1,0 +1,11 @@
+Package: archeos-manual
+Version: archeos0.1
+Architecture: all
+Maintainer: Fabrizio Furnari <fab.furnari@gmail.com>
+Installed-Size: 31
+Depends: iceweasel
+Section: Other
+Priority: extra
+Homepage: https://github.com/archeos/archeos-manual
+Description: Offline documentation for ArcheOS
+ Offline documentation for ArcheOS
