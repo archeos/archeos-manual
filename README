@@ -1,1 +1,14 @@
-test
+archeos-manual
+
+*******************************
+ INSTRUCTIONS TO BUILD PACKAGE
+*******************************
+
+!!! Be sure to have the latest version with
+  * git pull origin master
+
+1. Check the version into archeos-manual/DEBIAN/control
+2. sudo chown -R root:root archeos-manual/
+3. sudo dpkg -b archeos-manual/ archeos-manual_version_all.deb
+   (example archeos-manual_archeos1.2_all.deb)
+4. Move the .deb package outside of this GIT repository
