@@ -34,6 +34,12 @@ Formats
 Manual build the documentation
 ------------------------------
 ### Requirements to build the documentation
+
+The ArcheOS documentation has been built successfully with these packages:
+* Python 2.7.3 or higher
+* Sphinx 1.1.3 or higher (better installed with easy_install into virtualenv)
+* Markdown 2.2.1 or higher
+
 ### Build commands
 
 Debian package
