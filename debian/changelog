@@ -1,0 +1,5 @@
+archeos-manual (0.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Fabrizio Furnari <fab.furnari@gmail.com>  Fri, 18 Jan 2013 12:14:10 +0100
