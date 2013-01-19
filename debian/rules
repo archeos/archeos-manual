@@ -13,7 +13,7 @@
 	dh $@ --with=sphinxdoc
 
 override_dh_auto_build:
-	dh_auto_build -- html
+	dh_auto_build -- html man
 
 override_dh_sphinxdoc:
 	dh_sphinxdoc usr/share/archeos-manual/html

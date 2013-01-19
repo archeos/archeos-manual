@@ -213,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'ArcheOS', u'ArcheOS Documentation',
+    ('index', 'archeos', u'ArcheOS Documentation',
      [u'ArcheOS Documentation Team'], 1)
 ]
 
