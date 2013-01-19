@@ -40,11 +40,21 @@ The ArcheOS documentation has been built successfully with these packages:
 * Python 2.7.3 or higher
 * Sphinx 1.1.3 or higher (better installed with easy_install into virtualenv)
 * Markdown 2.2.1 or higher
+* git-buildpackage (to build the debian package)
 
 ### Build commands
 
 Debian package
 --------------
+
+Use `git-buildpackage` to build from source and follow the usual workflow while developing:
+
+1. Edit files
+2. Commit them with git
+3. When a new release of the package is ready use `git-dch -R` to update changelog file
+4. Add and commit the _debian/changelog_ file too.
+5. Use `git-buildpackage --git-sign` to build the package at specified release and create tag
+6. Push to the remote repository with `git push && git push --tags`
 
 Automation
 ----------
