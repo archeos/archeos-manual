@@ -184,7 +184,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'doc.tex', u'doc Documentation',
-   u'Fabrizio', 'manual'),
+   u'ArcheOS Documentation Team', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -213,8 +213,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'doc', u'doc Documentation',
-     [u'Fabrizio'], 1)
+    ('index', 'ArcheOS', u'ArcheOS Documentation',
+     [u'ArcheOS Documentation Team'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -227,8 +227,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'doc', u'doc Documentation',
-   u'Fabrizio', 'doc', 'One line description of project.',
+  ('index', 'ArcheOS', u'ArcheOS Documentation',
+   u'ArcheOS Documentation Team', 'ArcheOS', 'Official ArcheOS Documentation.',
    'Miscellaneous'),
 ]
 
@@ -246,9 +246,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = u'doc'
-epub_author = u'Fabrizio'
-epub_publisher = u'Fabrizio'
-epub_copyright = u'2013, Fabrizio'
+epub_author = u'ArcheOS Documentation Team'
+epub_publisher = u'ArcheOS Documentation Team'
+epub_copyright = u'2013, ArcheOS Documentation Team'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
