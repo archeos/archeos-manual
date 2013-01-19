@@ -1,22 +1,22 @@
 .. _intro:
 
-Introduction
-============
+Introduction to ArcheOS
+=======================
 
 .. include:: global.rst
 
 Lorem ipsum
 
-.. contents:: Contents
-  :depth: 1
-  :local:
+.. toctree::
+   :maxdepth: 2
 
-Para1
------
 
-Para2
------
+Downloading ArcheOS
+-------------------
 
-Para3
------
+Installing ArcheOS
+------------------
+
+Updating ArcheOS
+----------------
 
