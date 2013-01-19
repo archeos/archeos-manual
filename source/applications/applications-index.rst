@@ -14,3 +14,7 @@ List of applications included:
 .. toctree::
     :maxdepth: 1
 
+Template
+--------
+
+Use this template to create the pages: :ref:`apptemplate`

@@ -1,4 +1,4 @@
-.. _template:
+.. _apptemplate:
 
 Application template
 ====================
