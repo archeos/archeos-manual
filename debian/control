@@ -1,5 +1,5 @@
 Source: archeos-manual
-Section: documentation
+Section: doc
 Priority: optional
 Maintainer: Fabrizio Furnari <fab.furnari@gmail.com>
 Build-Depends: debhelper (>= 8.0.0), python-sphinx (>= 1.1.3+dfsg-4) 
