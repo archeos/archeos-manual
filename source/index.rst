@@ -1,12 +1,20 @@
-.. doc documentation master file, created by
-   sphinx-quickstart on Fri Jan 18 11:55:41 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. doc documentation master file
 
 Welcome to ArcheOS documentation!
 ===================================
 
 .. include:: global.rst
+
+This is the official page for **ArcheOS** documentation.  
+Are you looking for `ArcheOS homepage <http://www.archeos.eu/>`_? Or you want to `download it <http://www.archeos.eu/wiki/doku.php?id=download>`_?
+
+Here you can find information about the operating system itself (how to install it, how to upgrade it, etc.) and about the applications installed. A list of tutorials is also present, be sure to check first that the version of ArcheOS you are using is listed on the top of the tutorial's page.  
+This documentation (slightly modified) is installed also in every ArcheOS operating system from version 5 (theodoric), users can browse it offline pointing their preferred browser to `/usr/share/archeos-manual/html/index.html </usr/share/archeos-manual/html/index.html>`_.
+
+Download this documentation in **PDF** or **ePub** formats.
+
+If you want to collaborate to this documentation please `contact us <http://www.archeos.eu/wiki/doku.php?id=contacts>`_ or `fork this project on GitHub <https://github.com/archeos/archeos-manual/fork_select>`_ and send us a pull request!
+
 
 Contents:
 ---------
@@ -17,6 +25,7 @@ Contents:
    intro
    applications/applications-index
    tutorials/tutorials-index
+   development/development-index
 
 
 Introduction:
@@ -44,4 +53,10 @@ Tutorials:
    tutorials/tutorials-index
 
 
+Development
+^^^^^^^^^^^
 
+.. toctree:: 
+   :maxdepth: 2
+
+   development/development-index
