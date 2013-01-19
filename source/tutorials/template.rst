@@ -1,7 +1,7 @@
 .. _template:
 
-Template
-========
+Tutorial template
+=================
 
 .. include:: ../global.rst
 
