@@ -19,6 +19,11 @@ Area
 
 Insert here the area, if any, this appplication belongs (eg. facial reconstruction)
 
+Maintainer
+----------
+
+Insert here who is in charge about maintainance of this software in ArcheOS (if is packaged by us) or insert "Debian" if the software cames from the official Debian repositories.
+ 
 Basic usage
 -----------
 
