@@ -13,11 +13,12 @@ List of available tutorials
 
 .. toctree::
     :maxdepth: 1
+    :glob:
+    
+    *
 
 Templates
 ---------
 
-.. toctree::
-   :maxdepth: 1
-   
-   template
+Use this template to create tutorials: :ref:`tuttemplate`
+

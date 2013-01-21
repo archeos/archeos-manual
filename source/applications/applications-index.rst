@@ -13,6 +13,9 @@ List of applications included:
 
 .. toctree::
     :maxdepth: 1
+    :glob:
+
+    *
 
 Template
 --------

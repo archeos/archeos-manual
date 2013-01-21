@@ -1,4 +1,4 @@
-.. _template:
+.. _tuttemplate:
 
 Tutorial template
 =================
