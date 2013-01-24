@@ -3,7 +3,7 @@
 Tutorial template
 =================
 
-.. include:: ../global.rst
+.. include:: global.rst
 
 This is a simple template to use when writing a new page.
 
