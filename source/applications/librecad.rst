@@ -1,13 +1,13 @@
 .. _apptemplate:
 
 LibreCAD
-====================
+========
 
 .. include:: global.rst
 
-http://librecad.org/cms/home.html
+`Official LibreCAD Home Page <http://librecad.org/cms/home.html>`_
 
-.. note:: This template applies only to ArcheOS version 5
+.. note:: This page applies only to ArcheOS version 5
 
 Application info
 ----------------
