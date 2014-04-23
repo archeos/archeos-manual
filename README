@@ -62,9 +62,13 @@ Automation
 Collaborate
 -----------
 ### GIT versioning
+
+Just send us a pull request on [GitHub][3] and we will be happy to integrate it!
+
 ### Write the documentation for ArcheOS
 
 Notes
 -----
 [1]: http://sphinx-doc.org/                "Sphinx"
 [2]: http://en.wikipedia.org/wiki/Markdown "Markdown"
+[3]: https://github.com/archeos/archeos-manual "GitHub"
