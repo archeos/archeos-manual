@@ -1,3 +1,49 @@
+archeos-manual (0.2) theodoric; urgency=medium
+
+  [ Fabrizio Furnari ]
+  * Added usual instructions to build the debian package
+  * Changed  theme
+  * Now here is a decent directory structure...
+  * Converted to native package
+  * Added template for applications
+  * Removed placeholder
+  * Added application template
+  * fixed typo
+  * Added some text to home page
+  * Added developers section
+  * Now the intro page has a sense...
+  * Added some text to intro page
+  * Moved logo, no more lorem ipsum
+  * Fixed some variables
+  * Added support for manpages
+  * Fixed application template page
+  * Added maintainer section to application template
+  * Added (non-working) table
+  * now tables works
+  * Changed tutorials and application folders to use globbing
+  * Fixed global.rst location
+  * Fixed url in index
+  * Added TOC
+  * Added page about documentation
+  * Added overview
+
+  [ Luca Bezzi ]
+  * Create librecad
+
+  [ Fabrizio Furnari ]
+  * Simply added suffix
+  * minor cosmetic changes on librecad page
+
+  [ fabfurnari ]
+  * Rename README to README.md
+
+  [ Fabrizio Furnari ]
+  * added new theme
+  * reverted to standard README
+  * Simple modifications
+
+ -- Fabrizio Furnari <fab.furnari@gmail.com>  Wed, 23 Apr 2014 17:42:31 +0200
+
 archeos-manual (0.1) theodoric; urgency=low
 
   * Initial release
