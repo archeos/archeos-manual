@@ -1,7 +1,7 @@
 .. doc documentation master file
 
-Welcome to ArcheOS documentation!
-===================================
+ArcheOS Documentation
+=====================
 
 .. include:: global.rst
 
@@ -13,7 +13,7 @@ This documentation (slightly modified) is installed also in every ArcheOS operat
 
 Download this documentation in **PDF** or **ePub** formats.
 
-If you want to collaborate to this documentation please `contact us <http://www.archeos.eu/wiki/doku.php?id=contacts>`_ or `fork this project on GitHub <https://github.com/archeos/archeos-manual/fork_select>`_ and send us a pull request!
+If you want to collaborate to this documentation please `contact us <http://www.archeos.eu/wiki/doku.php?id=contacts>`_ or `fork this project on GitHub <https://github.com/archeos/archeos-manual/>`_ and send us a pull request!
 
 
 Contents:
