@@ -28,8 +28,8 @@ Basic usage
 
 LibreCAD can be used to draw vector layers over raster photomosaic, as a photomapping application
 (note! not recomended: better to use a GIS software for this). 
-LibreCAD can be also used for all kind of techniqal archaeological drawing (e.g. for archaeological 
-arthefact's illustrations). 
+LibreCAD can be also used for all kind of technical archaeological drawing (e.g. for  illustration 
+of archaeologicalartefact). 
 The software is also useful to reconstruct local coordinates system, using triangulation rules.
 
 
