@@ -3,7 +3,7 @@
 ArcheOS Documentation
 =====================
 
-.. include:: global.rst
+.. include:: /global.rst
 
 This is the official page for **ArcheOS** documentation.  
 Are you looking for `ArcheOS homepage <http://www.archeos.eu/>`_? Or you want to `download it <http://www.archeos.eu/wiki/doku.php?id=download>`_?

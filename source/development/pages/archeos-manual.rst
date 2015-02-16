@@ -3,7 +3,7 @@
 archeos-manual package
 ======================
 
-.. include:: ../global.rst
+.. include:: /global.rst
 
 This page describes the state of art and process related the ArcheOS documentation project
 
@@ -52,6 +52,10 @@ Other files/folders
 
 * **_static/** contains static files (js/images)
 * **_templates/** contains the Sphinx template (defined into **conf.py**)
+* **conf.py** contains the general directives for Sphinx (see `the documentation
+  about`_)
+* **global.rst** in sincluded in most pages and contains the image
+  (logo). Contains also some cross-pages features.
 
 Online documentation
 --------------------
@@ -64,3 +68,4 @@ Contribute to the documentation
 .. _Sphinx: http://sphinx-doc.org/index.html
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
 .. _here: http://sphinx-doc.org/tutorial.html
+.. _the documentation about: http://sphinx-doc.org/config.html

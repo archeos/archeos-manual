@@ -3,7 +3,7 @@
 Tutorials
 =========
 
-.. include:: ../global.rst
+.. include:: /global.rst
 
 This page lists the available tutorials for ArcheOS.
 Please note at the top of each page the ArcheOS version the tutorial is intended for.

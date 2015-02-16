@@ -3,7 +3,7 @@
 LibreCAD
 ========
 
-.. include:: global.rst
+.. include:: /global.rst
 
 `Official LibreCAD Home Page <http://librecad.org/cms/home.html>`_
 

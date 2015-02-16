@@ -3,7 +3,7 @@
 archeos-menu package
 ====================
 
-.. include:: ../global.rst
+.. include:: /global.rst
 
 This page is intended to explain to other ArcheOS developers (or who's
 interested in) the ArcheOS menu.
