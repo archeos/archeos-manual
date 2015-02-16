@@ -15,7 +15,7 @@ List of applications included:
     :maxdepth: 1
     :glob:
 
-    *
+    pages/*
 
 Template
 --------

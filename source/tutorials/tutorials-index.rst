@@ -15,7 +15,7 @@ List of available tutorials
     :maxdepth: 1
     :glob:
     
-    *
+    pages/*
 
 Templates
 ---------
