@@ -1,7 +1,7 @@
 .. _documentation:
 
-ArcheOS Documentation
-=====================
+archeos-manual package
+======================
 
 .. include:: ../global.rst
 
@@ -13,17 +13,11 @@ Overview
 Documentation for ArcheOS is built from a single git repository (https://github.com/archeos/archeos-manual). 
 This means that both **archeos-manual** package and the documentation browsable online (http://doc.repos.it) are built using Sphinx () using quite the same steps.
 
-### Repository layout
-
-
-
 Package
 -------
 
 Online documentation
 --------------------
-
-### Server workflow
 
 Contribute to the documentation
 -------------------------------
