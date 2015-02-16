@@ -25,6 +25,8 @@ on all desktop environments that supports the XDG standard.
 The menu is basically copied from the `kali linux`_ one, with minor
 modifications.
 
+.. include:: ../build-instructions.include
+
 The package
 -----------
 

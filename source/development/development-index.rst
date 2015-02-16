@@ -14,5 +14,5 @@ List of documentation pages
     :maxdepth: 1
     :glob:
 
-    *
+    pages/*
 
