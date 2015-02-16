@@ -7,6 +7,13 @@ archeos-manual package
 
 This page describes the state of art and process related the ArcheOS documentation project
 
+Source
+------
+
+* `archeos-manual on GitHub`_
+* `git repository`_
+
+
 Overview
 --------
 
@@ -63,6 +70,8 @@ Online documentation
 Contribute to the documentation
 -------------------------------
 
+.. _archeos-manual on GitHub: https://github.com/archeos/archeos-manual
+.. _git repository: git@github.com:archeos/archeos-manual.git
 .. _single git repository: https://github.com/archeos/archeos-manual
 .. _browsable online: http://doc.archeos.it
 .. _Sphinx: http://sphinx-doc.org/index.html

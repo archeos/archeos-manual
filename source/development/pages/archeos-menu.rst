@@ -8,6 +8,12 @@ archeos-menu package
 This page is intended to explain to other ArcheOS developers (or who's
 interested in) the ArcheOS menu.
 
+Source
+------
+
+* `archeos-menu on GitHub`_
+* `git repository`_
+
 Overview
 --------
 
@@ -181,6 +187,8 @@ To add a new submenu:
 * The ``Icon=`` entry must exists somewhere into ``/usr/share/icons`` or must be
   inserted into the **menu-icons/64x64/apps/** folder (see above).
 
+.. _archeos-menu on GitHub: https://github.com/archeos/archeos-menu
+.. _git repository: git@github.com:archeos/archeos-menu.git
 .. _freedesktop.org guidelines: http://standards.freedesktop.org/menu-spec/menu-spec-1.0.html
 .. _kali linux: http://git.kali.org/gitweb/?p=packages/kali-menu.git;a=summary
 .. _archeos menu package: https://github.com/archeos/archeos-menu
