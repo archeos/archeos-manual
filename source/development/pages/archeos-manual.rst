@@ -1,4 +1,4 @@
-.. _documentation:
+.. _archeos-manual:
 
 archeos-manual package
 ======================

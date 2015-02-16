@@ -1,4 +1,4 @@
-.. _menu:
+.. _archeos-menu:
 
 archeos-menu package
 ====================
