@@ -16,3 +16,10 @@ List of documentation pages
 
     pages/*
 
+Contact ArcheOS developers
+--------------------------
+
+Official development mailing list: archeos-dev@lists.linux.it
+IRC: channel **#archeos** on _`freenode` (chat.freenode.net)
+
+.. _freenode: https://freenode.net/
