@@ -216,7 +216,13 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'archeos', u'ArcheOS Documentation',
-     [u'ArcheOS Documentation Team'], 1)
+     [u'ArcheOS Documentation Team'], 1),
+    ('development/development-index', 'archeos-dev', 'ArcheOS development doc',
+     [u'ArcheOS Documentation Team'], 1),
+    ('applications/applications-index', 'archeos-applications', 'ArcheOS applications doc',
+     [u'ArcheOS Documentation Team'], 1),
+    ('tutorials/tutorials-index', 'archeos-tutorials', 'ArcheOS tutorials',
+     [u'ArcheOS Documentation Team'], 1),
 ]
 
 # If true, show URL addresses after external links.
