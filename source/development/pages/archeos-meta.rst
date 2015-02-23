@@ -40,9 +40,9 @@ Add a new application into ArcheOS
 2. Edit the **debian/control** file and add the desired package into the
    appropriate section (metapackage) as the others.
 3. Ensure that:
-   * The package is stable and well tested on ArcheOS.
-   * The package is available throught the official Debian repositories or the ArcheOS APT repositories.
-   * The software license is compatible with ArcheOS (or :ref:`contact-developers` if you are not confident about)
+    * The package is stable and well tested on ArcheOS.
+    * The package is available throught the official Debian repositories or the ArcheOS APT repositories.
+    * The software license is compatible with ArcheOS (or :ref:`contact-developers` if you are not confident about)
 4. Send us a pull request and if possible we'll insert the new software into the
    metapackage.
 5. Once the request is approved the ArcheOS developers will build the
