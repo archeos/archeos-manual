@@ -1,3 +1,39 @@
+archeos-manual (5.0) theodoric; urgency=medium
+
+  [ Fabrizio Furnari ]
+  * new theme
+  * fixed github url
+  * removed unused files
+  * updated year
+
+  [ Romain Janvier ]
+  * Typos
+  * Update librecad.rst
+
+  [ Fabrizio Furnari ]
+  * start working on menu
+  * new version
+  * first stub for archeos-menu doc
+  * better formatting
+  * Added common section to build the package Re-organization for TOC
+  * folder reorganization
+  * fixed typo
+  * using the absolute path for logo
+  * merged intro and index
+  * added links to repositories
+  * changed title
+  * first draft for archeos-meta
+  * finished archeos-manual
+  * split man pages
+  * path to local image
+  * documentation to build iso
+  * documentation moved
+  * added contacts
+  * removed unused conf
+  * first stub for archeos-meta
+
+ -- Fabrizio Furnari <fab.furnari@gmail.com>  Mon, 23 Feb 2015 13:09:01 +0100
+
 archeos-manual (0.2) theodoric; urgency=medium
 
   [ Fabrizio Furnari ]
