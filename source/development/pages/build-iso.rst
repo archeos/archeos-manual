@@ -83,8 +83,48 @@ Follows step-by-step instructions on how to build the ISO on Debian or Ubuntu
 .. warning:: Remember to run ``sudo lb clean --purge`` BEFORE launch again lb
              config to reset the original status
 
-Notes
+HowTo
 -----
+
+Include different (optional) packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the package is present in the Debian/ArcheOS APT repositories
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+1. Ensure that the package is available either in the Debian repositories (the
+   same used by the ArcheOS version) or in the ArcheOS APT repositories.
+2. Edit the **ArcheOS/debian-live/config/package-lists/archeos-core.list.chroot** file and add the desired package name at the end of file.
+3. Optionally you can create an additional file similar to the **archeos-core.list.chroot** and list the desired package there. Note that the file MUST have the    ``.list.chroot`` suffix.
+3. Build as stated before.
+
+If the package is not available on APT repositories
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+1. Create (if not already present) the **ArcheOS/debian-live/config/packages.chroot/**
+2. Copy the binary debian packages to install into the folder.
+3. Build as stated before.
+
+Refer to the `live-manual`_ section about that for more information.
+
+Build ArcheOS with different architecture
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The default ArcheOS architecture is the same as the Linux machine where the ISO is built. 
+This means that if you are on a amd64 pc you will build an amd64 version of ArcheOS.
+
+To change this you need to pass the ``--architectures`` option to ``lb config`` at build time. For example, if you are on a **amd64** Linux box you could build a i386 ArcheOS with:
+
+1. ``sudo lb clean --purge``
+2. ``lb config --architecture i386``
+3. ``sudo lb build``
+
+Obviously is not possible to build a **amd64** version of ArcheOS on a **i386** host.
+
+.. warning:: some packages are still not migrated to the "correct" format (are still in form of binary ``.deb`` packages), so they could not be available to the desired architecture.
+
+
 
 .. _live-build: http://live.debian.net/devel/live-build/
 .. _apt-cacher-ng: http://live.debian.net/devel/live-build/
+.. _live-manual: http://live.debian.net/manual/3.x/html/live-manual.en.html#430
