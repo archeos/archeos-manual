@@ -1,3 +1,13 @@
+archeos-manual (5.1) theodoric; urgency=medium
+
+  * clarification on packages version
+  * archeos-meta package
+  * completed page on archeos-desktop
+  * fixed list
+  * added some howto to the build-iso page
+
+ -- Fabrizio Furnari <fab.furnari@gmail.com>  Tue, 24 Feb 2015 11:03:53 +0100
+
 archeos-manual (5.0) theodoric; urgency=medium
 
   [ Fabrizio Furnari ]
