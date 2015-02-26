@@ -83,7 +83,7 @@ Follows step-by-step instructions on how to build the ISO on Debian or Ubuntu
 .. warning:: Remember to run ``sudo lb clean --purge`` BEFORE launch again lb
              config to reset the original status
 
-.. note:: If needed, the default user/password for the ArcheOS system are: **archeos/live**
+.. note:: If needed, the default user is **live** with **empty password**
 
 HowTo
 -----
