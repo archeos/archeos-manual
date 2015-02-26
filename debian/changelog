@@ -1,3 +1,10 @@
+archeos-manual (5.2) theodoric; urgency=medium
+
+  * specified default user/pass
+  * changed password
+
+ -- Fabrizio Furnari <fab.furnari@gmail.com>  Thu, 26 Feb 2015 16:29:06 +0100
+
 archeos-manual (5.1) theodoric; urgency=medium
 
   * clarification on packages version
