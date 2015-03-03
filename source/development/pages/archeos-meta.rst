@@ -24,9 +24,16 @@ The package
 
 The following main packages are built in ``archeos-meta``:
 
+* ``archeos-desktop`` metapackage contains all packages/metapackages used to
+  build the whole ArcheOS system, including desktop environment, keyrings, menus and so on.
+  The package could be ideally installed on a vanilla **Debian wheezy** and
+  recreate the whole ArcheOS distribution.
+  At the moment is also used to switch between the GNOME and XFCE version of
+  ArcheOS, as it generates both the metapackages.
+
 * ``archeos-system``
-  It depends on all per-area metapackages (eg. ``archeos-gps``, ``archeos-cad``,
-  ...). It is used to ensure proper upgrades.
+  It depends on all per-area metapackages (eg. ``archeos-gps``, ``archeos-cad``,...). It is used to ensure proper upgrades.
+
 * All other ``archeos-*`` packages are intended to collect all ArcheOS-specific
   softwares, grouping them in a easy, per-area format.
 
@@ -48,6 +55,12 @@ Add a new application into ArcheOS
 5. Once the request is approved the ArcheOS developers will build the
    ``archeos-meta`` package and upload the new metapackage on the official
    ArcheOS APT repositories.
+6. Note that if the package needs to be integrated into the ArcheOS menu you have to modify the ``archeos-menu`` package too. See the :ref:`create-menu-entry` section.
+
+Add new package section into ArcheOS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: todo
 
 .. _archeos-meta on GitHub: https://github.com/archeos/archeos-meta
 .. _git repository: git@github.com:archeos/archeos-meta.git
