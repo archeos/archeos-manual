@@ -1,3 +1,9 @@
+archeos-manual (5.3) theodoric; urgency=medium
+
+  * merged metapackages
+
+ -- Fabrizio Furnari <fab.furnari@gmail.com>  Tue, 03 Mar 2015 14:52:45 +0100
+
 archeos-manual (5.2) theodoric; urgency=medium
 
   * specified default user/pass
