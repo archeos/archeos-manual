@@ -55,7 +55,8 @@ Add a new application into ArcheOS
 5. Once the request is approved the ArcheOS developers will build the
    ``archeos-meta`` package and upload the new metapackage on the official
    ArcheOS APT repositories.
-6. Note that if the package needs to be integrated into the ArcheOS menu you have to modify the ``archeos-menu`` package too. See the :ref:`create-menu-entry` section.
+6. Note that if the package needs to be integrated into the ArcheOS menu you have to modify the ``archeos-menu`` package too. 
+   See the :ref:`create-menu-entry` section.
 
 Add new package section into ArcheOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

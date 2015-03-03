@@ -147,6 +147,8 @@ Listed below other files and direcotries in the package
 HowTo
 -----
 
+.. _create-menu-entry:
+
 Create menu entry
 ^^^^^^^^^^^^^^^^^
 
