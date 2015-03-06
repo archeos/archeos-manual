@@ -1,3 +1,10 @@
+archeos-manual (5.4) theodoric; urgency=medium
+
+  * added simple page on archeos-apt-setup
+  * firts stub for new page
+
+ -- Fabrizio Furnari <fab.furnari@gmail.com>  Fri, 06 Mar 2015 17:15:10 +0100
+
 archeos-manual (5.3) theodoric; urgency=medium
 
   * merged metapackages
