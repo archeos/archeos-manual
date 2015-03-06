@@ -33,7 +33,6 @@ Special ArcheOS packages versioning
 The following packages major version MUST match the current ArcheOS version:
 
 * ``archeos-meta``
-* ``archeos-desktop``
 * ``archeos-keyring``
 * ``archeos-manual``
 * ``archeos-menu``
