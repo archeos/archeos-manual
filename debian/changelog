@@ -1,3 +1,10 @@
+archeos-manual (5.5) theodoric; urgency=medium
+
+  * removed archeos-desktop
+  * first howto
+
+ -- Fabrizio Furnari <fab.furnari@gmail.com>  Fri, 13 Mar 2015 15:40:22 +0100
+
 archeos-manual (5.4) theodoric; urgency=medium
 
   * added simple page on archeos-apt-setup
