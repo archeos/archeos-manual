@@ -16,16 +16,17 @@ List of documentation pages
 
     pages/*
 
+.. _howto-list:
 
-.. _contact-developers:
+List of HowTo for developers
+----------------------------
 
-Contact ArcheOS developers
---------------------------
+.. toctree::
+    :maxdepth: 2
+    
+    pages/developers-howto.rst
 
-Official development mailing list: archeos-dev@lists.linux.it
-IRC: channel **#archeos** on _`freenode` (chat.freenode.net)
-
-.. _freenode: https://freenode.net/
+.. _package-versioning:
 
 Special ArcheOS packages versioning
 -----------------------------------
@@ -43,3 +44,13 @@ For example: if ArcheOS is currently on version 5 (Theodoric), the
 When ArcheOS will reach the next version obviously all the above packages must
 be modified to match the new version. This can be also done previously in a
 separate branch.
+
+.. _contact-developers:
+
+Contact ArcheOS developers
+--------------------------
+
+Official development mailing list: archeos-dev@lists.linux.it
+IRC: channel **#archeos** on _`freenode` (chat.freenode.net)
+
+.. _freenode: https://freenode.net/

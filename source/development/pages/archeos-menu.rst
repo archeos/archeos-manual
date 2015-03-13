@@ -170,6 +170,8 @@ following items must be created:
   ``/usr/share/applications/``. This allows to create desktop files that will
   not be used until the actual deb package is installed.
 
+.. _add-new-submenu:
+
 Add a new submenu
 ^^^^^^^^^^^^^^^^^
 
