@@ -74,6 +74,7 @@ Enter the **debian/** dir and change:
 2. **compat**
     * from ``9`` to ``8``
 3. **control**
+    * Rename the binary package from ``python-totalopenstation`` to ``totalopenstation``
     * Move the **Maintainer** to **X-Original-Maintainer:**
     * Change **Maintainer:** to you
     * Remove ``python-all`` and use ``python`` instead in **Build-Depends:**
@@ -83,6 +84,15 @@ Enter the **debian/** dir and change:
 4. **rules**
     * Remove ``export PYBUILD_NAME`` line
     * Remove ``--buildsystem=pybuild``
+    * Add ``export DH_OPTIONS`` and ``INSTDIR=debian/tmp`` at the beginning
+    * Add these overrides:
+
+::
+
+    override_dh_auto_install:
+        dh_auto_install --destdir=$(INSTDIR)
+
+        override_dh_auto_clean:
 
 We can now commit the changes with ``git commit -a -m 'Debianization'`` and check the tags: ``git tag --list``.
 As we can see the tag **upstream/0.3.1pre** has been created and we'll use to notify git-buildpackage which tree use for upstream.
@@ -101,6 +111,82 @@ The package can be now build with:
 .. note:: The **build-area** folder can be also specified as default into the **~/.gbp.conf** file so we don't need to pass ``--git-export-dir=`` option every time.
 
 After the compilation we will find all files we need into the **../build-area/** folder, including debs and archives. We will upload to the ``reprepro`` repository later.
+
+ArcheOS modifications
+^^^^^^^^^^^^^^^^^^^^^
+
+We need to do some modifications to this package, mainly due to the wrong icon path: in debian the ``.desktop`` files must go into **/usr/share/applications/**  and icons into **/usr/share/icons/**. In the original package these are into the **data/** folder.
+
+The best thing to do is to create a series of files into the **debian/** folder without touching the original files (in that case we should create patches with quild, and it can be quite complicate).
+
+* Create the **debian/totalopenstation.doc-base**
+
+::
+
+    Document: totalopenstation
+    Title: Debian totalopenstation Manual
+    Author: Stefano Costa <steko@iosa.it>
+    Abstract: Documentation about TOPS.
+    Section: Science/Geoscience
+    
+    Format: Text
+    Index: /usr/share/doc/totalopenstation/docs/index.txt
+    Files: /usr/share/doc/totalopenstation/docs/*.txt
+
+* Create a **debian/totalopenstation.doc**:
+
+::
+
+    README.txt
+    docs/
+
+* Create a **debian/totalopenstation.install** (this will install all needed files such icons and .desktop):
+
+::
+
+   usr/bin/*.py usr/share/totalopenstation/
+   usr/lib/
+   data/totalopenstation.desktop usr/share/applications/
+   data/icons/ usr/share/
+
+* Create a **debian/totalopenstation.links**
+
+::
+
+    usr/share/totalopenstation/totalopenstation-cli-parser.py usr/bin/totalopenstation-cli-parser
+    usr/share/totalopenstation/totalopenstation-cli-connector.py usr/bin/totalopenstation-cli-connector
+    usr/share/totalopenstation/totalopenstation-gui.py usr/bin/totalopenstation-gui
+
+
+Quilt modifications
+^^^^^^^^^^^^^^^^^^^
+
+We need to do some simple modifications to the upstream package, mainly for icons and desktop file.
+If we give a look at the **debian/totalopenstation.desktop** file we will notice that the ``Exec=`` line is pointing to the old ``.py`` executable. We need to edit it and register this change with `quilt`_. Quilt is only needed when we edit the "original" files, not the ones into the **debian/** folder.
+
+Some preliminary operations:
+
+* ``mkdir debian/patches/``
+* ``echo '.pc' >> .gitignore``
+* ``git commit -m 'ignore pc folder' .gitignore``
+* ``echo "unapply-patches" >>debian/source/local-options``
+* ``git commit -m 'Unapply patches after build' debian/source/local-options``
+
+Then let's create the patch:
+
+* ``quilt new fixed-execname-and-icon.patch``
+* ``quilt add data/totalopenstation.desktop``
+
+Now let's edit the **data/totalopenstation.desktop**: remove the ``.py`` extension from the ``Exec=`` filename and add a ``Icon=totalopenstation`` line to use the correct icon. After that go on and register the patch with quilt:
+
+* ``quilt refresh``
+* ``quilt header -e`` (describe shortly what you've done)
+
+Now we've finished and we can commit our patches and try to build again:
+
+* ``git commit -a -m 'Local patches'``
+* ``git-buildpackage``
+
 
 Daily packaging
 ^^^^^^^^^^^^^^^
@@ -141,4 +227,4 @@ Follow these steps:
 
 .. _totalopenstation on GitHub: https://github.com/steko/totalopenstation
 .. _totalopenstation ArcheOS repository: https://github.com:archeos/totalopenstation.git
-
+.. _quilt: https://www.debian.org/doc/manuals/maint-guide/modify.en.html#quiltrc
