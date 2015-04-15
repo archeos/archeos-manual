@@ -16,16 +16,55 @@ Source
 Requirements
 ------------
 
-Packages:
+Packages
+^^^^^^^^
 
 * ``python-stdeb``
 * ``git-buildpackage``
 * ``cowbuilder`` (or ``pbuilder``)
 
+Configuration files
+^^^^^^^^^^^^^^^^^^^
+
+.. note:: this section will go into some included file for every package
+
+In ArcheOS we use some configuration file for ``git-buildpackage``, ``pbuilder`` and ``quilt`` to avoid typing every time the same commands. All instructions below assumes that you have the following configuration files in the home of the user who builds the packages (or similar):
+
+* **~/.gbp.conf**
+
+::
+
+   [git-buildpackage]
+   export-dir = ../build-area/
+   tarball-dir = ../tarballs/
+   builder = /usr/bin/git-pbuilder -sa
+   # use 'DIST=wheezy git-pbuilder create' to create the archive
+   # upgrade periodically with DIST=wheezy git-pbuilder update
+   dist = wheezy
+   pbuilder = True
+   upstream-tree = master
+
+* **~/.pbuilderrc**:
+
+::
+
+    MIRRORSITE=http://ftp.it.debian.org/debian/
+    AUTO_DEBSIGN=yes
+
+* **~/.quiltrc**
+
+::
+
+    QUILT_PATCHES=debian/patches
+    QUILT_PUSH_ARGS="--color=auto"
+    QUILT_DIFF_ARGS="--no-timestamps --no-index -p ab --color=auto"
+    QUILT_REFRESH_ARGS="--no-timestamps --no-index -p ab"
+    QUILT_DIFF_OPTS='-p'
+
+These files can be useful also for other debian packaging too.
+
 Procedure
 ---------
-
-The **master** branch will be used to build the package, while the **upstream** branch will contain the original code
 
 Repository fork
 ^^^^^^^^^^^^^^^
@@ -33,32 +72,16 @@ Repository fork
 The upstream repository for this package is https://github.com/steko/totalopenstation
 We need to fork it into archeos/totalopenstation (https://github.com/archeos/totalopenstation) using the GitHub web interface so we can push our modifications.
 
-After forking we will clone it and add the ``steko`` remote so we can merge future development into our repos.
+Then we will clone it at tag ``0.3`` that is the latest stable release we are interested in.
 
-* ``git clone git@github.com:archeos/totalopenstation.git``
-* ``git remote add steko https://github.com/steko/totalopenstation.git``
-* ``git fetch steko``
-
-Check with ``git remote -v``
+* ``git clone -b 0.3 git@github.com:archeos/totalopenstation.git``
 
 Creation and first import
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. First clone the upstream repository: ``git@github.com:archeos/totalopenstation.git``
-2. Create the archive: ``tar cvzf totalopenstation-0.3.1pre.tar.gz totalopenstation --exclude-vcs``
-3. ``cd totalopenstation``
-4. Create a **upstream** branch: ``git checkout --orphan upstream``
-5. Commit all inside upstream: ``git commit --allow-empty -m 'Upstream'``
-6. Back to master: ``git checkout -f master``
-7. Import the tarball: ``git-import-orig --pristine-tar ../totalopenstation-0.3.1pre.tar.gz``
-
-Now there will be 3 branches:
-
-::
-
-    * master
-      pristine-tar
-      upstream
+* Enter the ``totalopenstation`` folder
+* Create a ``master`` branch from the ``0.3`` tag: ``git branch master 0.3``
+* Switch to the ``master`` branch: ``git checkout master``
 
 Create the debian folder:
 
@@ -73,6 +96,7 @@ Enter the **debian/** dir and change:
 
 2. **compat**
     * from ``9`` to ``8``
+
 3. **control**
     * Rename the binary package from ``python-totalopenstation`` to ``totalopenstation``
     * Move the **Maintainer** to **X-Original-Maintainer:**
@@ -81,6 +105,7 @@ Enter the **debian/** dir and change:
     * Change ``debhelper`` from ``9`` to ``8`` into **Build-Depends:**
     * Change **Standard-Version:** to ``3.9.3``
     * Remove formatting from description
+
 4. **rules**
     * Remove ``export PYBUILD_NAME`` line
     * Remove ``--buildsystem=pybuild``
@@ -94,62 +119,18 @@ Enter the **debian/** dir and change:
 
         override_dh_auto_clean:
 
-We can now commit the changes with ``git commit -a -m 'Debianization'`` and check the tags: ``git tag --list``.
-As we can see the tag **upstream/0.3.1pre** has been created and we'll use to notify git-buildpackage which tree use for upstream.
+We can now commit the changes with ``git commit -a -m 'Debianization'``.
 
-If all went fine a new entry inside **changelog** can be created with: ``git dch -R``
-The entry must be placed above the existing one with a new version number like `0.3.1-archeos1`
-
-The package can be now build with:
-
-* ``mkdir ../build-area/``
-* ``git-buildpackage --git-export-dir=../build-area/ --git-upstream-tree=upstream/0.3.1pre --git-tag``
-* ``git push -u origin master``
-* ``git push -u origin upstream``
-* ``git push --tags``
-
-.. note:: The **build-area** folder can be also specified as default into the **~/.gbp.conf** file so we don't need to pass ``--git-export-dir=`` option every time.
-
-After the compilation we will find all files we need into the **../build-area/** folder, including debs and archives. We will upload to the ``reprepro`` repository later.
-
-ArcheOS modifications
-^^^^^^^^^^^^^^^^^^^^^
-
-We need to do some modifications to this package, mainly due to the wrong icon path: in debian the ``.desktop`` files must go into **/usr/share/applications/**  and icons into **/usr/share/icons/**. In the original package these are into the **data/** folder.
-
-The best thing to do is to create a series of files into the **debian/** folder without touching the original files (in that case we should create patches with quild, and it can be quite complicate).
-
-* Create the **debian/totalopenstation.doc-base**
+5. **totalopenstation.install**
 
 ::
 
-    Document: totalopenstation
-    Title: Debian totalopenstation Manual
-    Author: Stefano Costa <steko@iosa.it>
-    Abstract: Documentation about TOPS.
-    Section: Science/Geoscience
-    
-    Format: Text
-    Index: /usr/share/doc/totalopenstation/docs/index.txt
-    Files: /usr/share/doc/totalopenstation/docs/*.txt
+    usr/bin/*.py usr/share/totalopenstation/
+    usr/lib/
+    totalopenstation.desktop usr/share/applications/
+    totalopenstation.svg usr/share/icons/
 
-* Create a **debian/totalopenstation.doc**:
-
-::
-
-    README.txt
-    docs/
-
-* Create a **debian/totalopenstation.install** (this will install all needed files such icons and .desktop):
-
-::
-
-   usr/bin/*.py usr/share/totalopenstation/
-   usr/lib/
-   data/totalopenstation.desktop usr/share/applications/
-   data/icons/ usr/share/
-
-* Create a **debian/totalopenstation.links**
+6. **totalopenstation.links**
 
 ::
 
@@ -157,73 +138,74 @@ The best thing to do is to create a series of files into the **debian/** folder 
     usr/share/totalopenstation/totalopenstation-cli-connector.py usr/bin/totalopenstation-cli-connector
     usr/share/totalopenstation/totalopenstation-gui.py usr/bin/totalopenstation-gui
 
+7. **totalopenstation.docs**
 
-Quilt modifications
-^^^^^^^^^^^^^^^^^^^
+::
 
-We need to do some simple modifications to the upstream package, mainly for icons and desktop file.
-If we give a look at the **debian/totalopenstation.desktop** file we will notice that the ``Exec=`` line is pointing to the old ``.py`` executable. We need to edit it and register this change with `quilt`_. Quilt is only needed when we edit the "original" files, not the ones into the **debian/** folder.
+    README.txt
+    docs/
 
-Some preliminary operations:
+Icons and desktop file
+^^^^^^^^^^^^^^^^^^^^^^
 
-* ``mkdir debian/patches/``
-* ``echo '.pc' >> .gitignore``
-* ``git commit -m 'ignore pc folder' .gitignore``
-* ``echo "unapply-patches" >>debian/source/local-options``
-* ``git commit -m 'Unapply patches after build' debian/source/local-options``
+In the development version of totalopenstation there will be an icon and a .desktop file that will go into **/usr/share/{applications,icons}** but in the ``0.3`` tag we need to add these to the package and patch it using **quilt**.
 
-Then let's create the patch:
+.. note:: **quilt** is a tool used in debian packaging to avoid invasive modifications to the upstream package. Each modification will be "transformed" into a patch that will go into the **debian/patches** folder. In debian packaging the **debian/** folder is the only folder that will be added to the original software.
 
-* ``quilt new fixed-execname-and-icon.patch``
-* ``quilt add data/totalopenstation.desktop``
+* ``quilt new icon-and-files.patch``
+* ``quilt add totalopenstation.desktop totalopenstation.svg``
 
-Now let's edit the **data/totalopenstation.desktop**: remove the ``.py`` extension from the ``Exec=`` filename and add a ``Icon=totalopenstation`` line to use the correct icon. After that go on and register the patch with quilt:
+Now let's copy the ``totalopenstation.destkop`` and ``totalopenstation.svg`` files into the package main folder. The desktop file could be something like this:
 
-* ``quilt refresh``
-* ``quilt header -e`` (describe shortly what you've done)
+::
 
-Now we've finished and we can commit our patches and try to build again:
+    [Desktop Entry]
+    Version=1.0
+    Type=Application
+    Terminal=false
+    Exec=totalopenstation-gui
+    Icon=totalopenstation
+    Name=Total Open Station
+    Comment=Download and export survey data from your total station]
 
-* ``git commit -a -m 'Local patches'``
+The icon needs to be copied from some other place...
+
+* When all files are copied you can actually build patches with ``quilt refresh``
+* Unapply all patches to do a "clean" package with ``quilt pop -a``
+* Ignore the **.pc** folder with ``echo '.pc' >> .gitignore``
+* ``git add .gitignore debian/patches``
+* ``git commit -m 'patches'``
+
+The package can be now build with:
+
+* ``mkdir ../build-area/``
 * ``git-buildpackage``
 
+.. note:: The **build-area** folder can be also specified as default into the **~/.gbp.conf** file so we don't need to pass ``--git-export-dir=`` option every time.
+
+If the build is successful we can now add an entry to the changelog updating the version to ``0.3archeos-1``.
+
+* ``git dch -R``
+
+And let git-buildpackage tag the repository for us with:
+
+* ``git-buildpackage --git-tag-only``
+
+After the compilation we will find all files we need into the **../build-area/** folder, including debs and archives. We will upload to the ``reprepro`` repository later.
+
+Push all our stuff to the remote repository with:
+
+* ``git push``
+* ``git push --tags``
 
 Daily packaging
 ^^^^^^^^^^^^^^^
 
 Once the package has been built the first time we only need to follow the usual ArcheOS/git-buildpackage workflow to build it: if we check tags (``git tag --list``) we will see that a new tag called **debian/0.3.1-archeos1** has been automatically created for us.
 
-So, assuming that we set the ``export-dir = ../build-area/`` and ``tarball-dir = ../tarballs/`` options inside our **~/.gbp.conf**, we only need to run:
-
 * ``git-buildpackage``
 
 To rebuild the totalopenstation package.
-
-New upstream changes
-^^^^^^^^^^^^^^^^^^^^
-
-The workflow in this case can be a little bit tricky: we need to first to merge the original tops repository into our ``upstream`` branch and then merge our ``upstream`` branch into our ``master`` branch.
-
-* ``git fetch steko``
-
-Assuming you followed the above tutorial naming convention you will have these branches:
-
-::
-
-      master
-      pristine-tar
-    * upstream
-      remotes/origin/master
-      remotes/origin/upstream
-      remotes/steko/gh-pages
-      remotes/steko/master
-
-Follow these steps:
-
-* ``git fetch steko``
-* Switch to our ``upstream`` branch: ``git checkout upstream``
-* Merge the ``steko/master`` branch into our ``upstream`` branch: ``git merge origin/steko``
-* Switch to ``master`` branch and merge the ``upstream`` branch into it: ``git checkout master; git merge upstream``
 
 .. _totalopenstation on GitHub: https://github.com/steko/totalopenstation
 .. _totalopenstation ArcheOS repository: https://github.com:archeos/totalopenstation.git
