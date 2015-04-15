@@ -1,3 +1,10 @@
+archeos-manual (5.7) theodoric; urgency=medium
+
+  * more stuff for tops
+  * updated procedure
+
+ -- Fabrizio Furnari <fab.furnari@gmail.com>  Wed, 15 Apr 2015 17:53:42 +0200
+
 archeos-manual (5.6) theodoric; urgency=medium
 
   * start working on tops package
