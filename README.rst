@@ -9,5 +9,5 @@ documentation website (http://doc.archeos.it).
 
 The specific documentation for this package can be found at http://doc.archeos.eu/development/pages/archeos-manual.html
 
-.. |build-status| image:: http://build.archeos.eu/badge.png?builder=archeos-manual-slave1
-  :target: http://build.archeos.eu/builders/archeos-manual-slave1
+.. |build-status| image:: http://build.archeos.eu/badge.png?builder=archeos-manual
+  :target: http://build.archeos.eu/builders/archeos-manual
