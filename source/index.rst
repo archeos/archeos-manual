@@ -50,8 +50,8 @@ Development
 
    development/development-index
 
-.. _ArcheOS homepage: http://sphinx-doc.org/config.html
-.. _download it: http://sphinx-doc.org/config.html
+.. _ArcheOS homepage: http://www.archeos.eu
+.. _download it: http://www.archeos.eu/download.html
 .. _/usr/share/archeos-manual/html/index.html: file:///usr/share/archeos-manual/html/index.html
 .. _contact us: http://www.archeos.eu/wiki/doku.php?id=contacts
 .. _fork this project on GitHub: https://github.com/archeos/archeos-manual/
