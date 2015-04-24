@@ -26,6 +26,16 @@ List of HowTo for developers
     
     pages/developers-howto.rst
 
+.. _archeos-dev-tools:
+
+ArcheOS developers tools
+------------------------
+
+A small list of useful tools and resources for ArcheOS developers:
+
+* `ArcheOS GitHub organization`_
+* `ArcheOS Continuous Integration`_ (BuildBot)
+
 .. _package-versioning:
 
 Special ArcheOS packages versioning
@@ -54,3 +64,5 @@ Official development mailing list: archeos-dev@lists.linux.it
 IRC: channel **#archeos** on _`freenode` (chat.freenode.net)
 
 .. _freenode: https://freenode.net/
+.. _ArcheOS GitHub organization: https://github.com/archeos/
+.. _ArcheOS Continuous Integration: http://build.archeos.eu
