@@ -1,6 +1,6 @@
 .. _archeos-website:
 
-Archeos Website
+ArcheOS Website
 ===============
 
 .. include:: /global.rst
