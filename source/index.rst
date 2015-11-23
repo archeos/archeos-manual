@@ -51,6 +51,15 @@ Development
 
    development/development-index
 
+Operations
+^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 2
+
+   operations/operations-index
+
+
 .. _ArcheOS homepage: http://www.archeos.eu
 .. _download it: http://www.archeos.eu/download.html
 .. _/usr/share/archeos-manual/html/index.html: file:///usr/share/archeos-manual/html/index.html
