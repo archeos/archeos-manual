@@ -7,6 +7,13 @@ This page describes all steps necessary to release a new ArcheOS version.
 
 .. warning:: In this page I use the following convention: **theodoric** is the *old* distribution, **newdistribution** is the *new* distribution, **wheezy** is the old Debian version theodoric was based on while **jessie** is the new one. Obviously replace these terms while you follow the instructions.
 
+0. Prerequisites
+----------------
+
+* A codename for the new release
+* An updated build toolchain installed onto a Debian distribution the same version the target ArcheOS release will be (eg. *jessie*) (see below)
+* Some artwork to include into the release (for GRUB/Syslinux/XFCE) 
+
 1. Create new reprepro distribution
 -----------------------------------
 

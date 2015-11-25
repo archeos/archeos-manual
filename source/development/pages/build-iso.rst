@@ -32,6 +32,7 @@ box with APT or similar.
   you want to try and build with different options. The ArcheOS live-build
   cconfiguration requires this to be present, see instructions below on how to
   configure.
+* ``syslinux`` package
 
 Optional requirements
 ^^^^^^^^^^^^^^^^^^^^^
