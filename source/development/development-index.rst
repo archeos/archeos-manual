@@ -7,6 +7,11 @@ Guidelines for ArcheOS developers
 
 Here you will find some useful resources for ArcheOS developers
 
+Important
+---------
+
+Read the :ref:`development-policy` before!
+
 List of documentation pages
 ---------------------------
 
@@ -35,6 +40,7 @@ A small list of useful tools and resources for ArcheOS developers:
 
 * `ArcheOS GitHub organization`_
 * `ArcheOS Continuous Integration`_ (BuildBot)
+* :ref:`developers-toolchain`
 
 .. _package-versioning:
 
