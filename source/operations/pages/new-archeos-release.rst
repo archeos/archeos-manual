@@ -3,7 +3,7 @@
 New ArcheOS Release
 ===================
 
-This page describes all steps necessary to release a new ArcheOS version.
+This page describes all steps necessary to release a new ArcheOS version. Take it as a list of reminder tasks for the next upgrade.
 
 .. warning:: In this page I use the following convention: **theodoric** is the *old* distribution, **newdistribution** is the *new* distribution, **wheezy** is the old Debian version theodoric was based on while **jessie** is the new one. Obviously replace these terms while you follow the instructions.
 
@@ -16,6 +16,13 @@ This page describes all steps necessary to release a new ArcheOS version.
 
 1. Create new reprepro distribution
 -----------------------------------
+
+On **farpoint**:
+
+* Backup **/srv/reprepro/** folder: ``sudo cp -a /srv/reprepro reprepro_backup.$(date +%s)``
+* Edit **/srv/reprepro/conf/distributions**
+
+  * 
 
 2. Update build toolchain
 -------------------------
@@ -41,6 +48,7 @@ Some examples:
    upstream-tree = master
 
 * Create the new base images used to build packages: ``DIST=jessie git-pbuilder create``
+* Use the last `live-build`_ package available for the target distribution. For example in Debian *Jessie* the live-build package is version 4. Probably you have to check that the current configuration for live-build (see `ArcheOS repository`_) is compatible with the new version. 
 
 3. Re-packaging tasks
 ---------------------
@@ -109,3 +117,5 @@ The ArcheOS repository too needs to be merged into the **master** branch using t
 .. _Vagrant: https://www.vagrantup.com/
 .. _ArcheOS main repository on Github: https://github.com/archeos/ArcheOS
 .. _ArcheOS repository: https://github.com/archeos/ArcheOS/
+.. _live-build: http://live.debian.net/
+.. _ArcheOS repository: https://github.com/archeos/ArcheOS

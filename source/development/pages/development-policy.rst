@@ -96,6 +96,27 @@ New release
 
 This section contains all steps, although at high-level, needed when a new ArcheOS version has to be released.
 
+Preliminary steps
+^^^^^^^^^^^^^^^^^
+
+#. **Codename**
+
+   A codename must be choosen before the actual new release process starts. The codename will be infact used into **reprepro** to create the new distribution and into packages.
+
+#. **Supported architectures**
+
+   Usually amd64 and i686 architectures are supported
+
+#. **Artwork**
+
+   Artwork theme must be coherent in all distribution parts (GRUB, Isolinux, desktop manager, etc.) and it's subject should be about the codename.
+
+Packages
+^^^^^^^^
+
+Some guidelines about packaging workflow for new ArcheOS release:
+
+* 
 
 .. _Debian Derivatives Guidelines: https://wiki.debian.org/Derivatives/Guidelines#Bug_reports
 .. _Debian bug-tracking system: https://www.debian.org/Bugs/
@@ -103,9 +124,6 @@ This section contains all steps, although at high-level, needed when a new Arche
 .. _archeos-menu package bug tracking system: https://github.com/archeos/archeos-menu/issues
 .. _archeos-meta bug tracking system: https://github.com/archeos/archeos-meta/issues
 .. _Debian Free Software Guidelines: https://www.debian.org/social_contract#guidelines
-
 .. _ArcheOS organization: https://github.com/archeos
-
 .. _Github pull-requests: https://help.github.com/articles/using-pull-requests/
-
 .. _git-buildpackage: https://wiki.debian.org/PackagingWithGit
