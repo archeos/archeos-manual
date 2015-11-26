@@ -26,3 +26,4 @@ Answer all the questions, specifically:
 * git-buildpackage
 * create the cowbuilder base
 * build-essential
+* rmadison to check version of package in all Debian repositories (useful)
