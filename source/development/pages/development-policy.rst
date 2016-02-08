@@ -118,6 +118,15 @@ Some guidelines about packaging workflow for new ArcheOS release:
 
 * 
 
+Buildbot
+^^^^^^^^
+
+On a new ArcheOS release also the `buildbot`_ configuration should be updated to reflect the new Debian release.
+
+The configuration is stored in the `buildbot-config repository on GitHub`_. Edit the `master.cfg`_ appropriately to reflect the new version (hint: search for the ``distribution`` var).
+
+Then reload the buildbot server with the new configuration and make sure all build works.
+
 .. _Debian Derivatives Guidelines: https://wiki.debian.org/Derivatives/Guidelines#Bug_reports
 .. _Debian bug-tracking system: https://www.debian.org/Bugs/
 .. _main ArcheOS repository bug tracking system: https://github.com/archeos/ArcheOS/issues/
@@ -127,3 +136,7 @@ Some guidelines about packaging workflow for new ArcheOS release:
 .. _ArcheOS organization: https://github.com/archeos
 .. _Github pull-requests: https://help.github.com/articles/using-pull-requests/
 .. _git-buildpackage: https://wiki.debian.org/PackagingWithGit
+
+.. _buildbot: http://build.archeos.eu/
+.. _buildbot-config repository on GitHub: https://github.com/archeos/buildbot-config
+.. _master.cfg: https://github.com/archeos/buildbot-config/blob/master/master.cfg
